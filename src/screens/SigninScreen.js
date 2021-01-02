@@ -1,9 +1,6 @@
-import React, { useState, useContext } from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import React, { useContext } from "react";
+import { View, StyleSheet, Button } from "react-native";
 import { NavigationEvents } from "react-navigation";
-import { createAppContainer, createSwitchNavigator } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
-import { createBottomTabNavigator } from "react-navigation-tabs";
 
 import AuthForm from "../components/AuthForm";
 import SwitchButton from "../components/SwitchButton";

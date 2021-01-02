@@ -1,19 +1,24 @@
 import React, { useContext } from "react";
-import { Text, StyleSheet, Dimensions, ActivityIndicator } from "react-native";
+import {  StyleSheet, ActivityIndicator } from "react-native";
 import MapView, { Polyline, Circle } from "react-native-maps";
 
 import { Context as LocationContext } from "../context/LocationContext";
 
 const Map = () => {
+  // state for the location object and current location
   const {
     state: { currentLocation, locations },
   } = useContext(LocationContext);
 
+  // loading icon
   if (!currentLocation) {
     return <ActivityIndicator size="large" style={{ marginTop: 200 }} />;
   }
 
   return (
+    // map component, with the initial region shown being the current location, fairly zoomed in
+    // add a fairly noticable circle on where the user is current located
+    // draw a line between each of the locations recorded
     <MapView
       style={styles.map}
       initialRegion={{
